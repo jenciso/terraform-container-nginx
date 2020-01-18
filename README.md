@@ -35,7 +35,7 @@ We can define our container resource. The resource type is `docker_container` an
 ```shell
 cat >> config.tf << EOF
 resource "docker_container" "nginx-server" {
-  name = "nginx-server"
+  name = "nginx-server-1"
   image = docker_image.nginx.latest
   ports {
     internal = 80
@@ -75,8 +75,8 @@ Finally a summary of Plan: `2 to add, 0 to change, 0 to destroy`.
 We could add a some content to serve via our nginx server.
 
 ```shell
-mkdir /tmp/tutorial/www
-echo "<h1>hello world</h1>" | sudo tee /tmp/tutorial/www/index.html
+mkdir -p /tmp/tutorial/www
+echo "<h1>hello world</h1>" > /tmp/tutorial/www/index.html
 ```
 
 ## Apply Terraform Actions
@@ -119,7 +119,7 @@ We can change our container to launch two instances, each with different names.
 
 ```shell
 resource "docker_container" "nginx-server" {
-  count = 8
+  count = 2
   name = "nginx-server-${count.index+1}"
   image = docker_image.nginx.latest
   ports {
