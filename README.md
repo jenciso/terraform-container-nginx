@@ -17,7 +17,7 @@ terraform init
 ```
 
 ```shell
-cat > config.cf << EOF
+cat > config.tf << EOF
 provider "docker" {
   host = "unix:///var/run/docker.sock"
 }
@@ -28,7 +28,7 @@ EOF
 We can now start defining the resources of our infrastructure. The first resource is our Docker image. A resource has two parameters, one is a `TYPE` and second a `NAME`. The type is `docker_image` and the name is `nginx`. Within the block we define the name and tag of the Docker Image.
 
 ```shell
-cat >> config.cf << EOF
+cat >> config.tf << EOF
 resource "docker_image" "nginx" {
   name = "nginx:1.11-alpine"
 }
@@ -39,7 +39,7 @@ EOF
 We can define our container resource. The resource type is `docker_container` and name as `nginx-server`. Within the block we set the resource parameters. We can reference other resources, such as a the `image`.
 
 ```shell
-cat >> config.cf << EOF
+cat >> config.tf << EOF
 resource "docker_container" "nginx-server" {
   name = "nginx-server"
   image = docker_image.nginx.latest
