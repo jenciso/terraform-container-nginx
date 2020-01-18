@@ -1,5 +1,7 @@
 # Deploy NGINX container using Terraform
 
+![](https://s3-sa-east-1.amazonaws.com/yadax.com.br/wp-content/uploads/2019/09/28112350/terraform2.png) 
+
 ## Create Terraform Config
 
 Terraform works based on a configuration file, in this case config.tf. The configuration defines your infrastructure, in this instance as providers and resources.
