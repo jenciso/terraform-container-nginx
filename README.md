@@ -188,3 +188,9 @@ To delete all files created
 rm -rf config.tf* terraform.tfstate* .terraform/
 rm -rf /tmp/tutorial
 ```
+
+### DEMO
+
+```
+[![asciicast](https://asciinema.org/a/bF5OfbZwLZ043XvJ0au3ATPPV.svg)](https://asciinema.org/a/bF5OfbZwLZ043XvJ0au3ATPPV)
+```
