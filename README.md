@@ -21,6 +21,7 @@ cat > config.cf << EOF
 provider "docker" {
   host = "unix:///var/run/docker.sock"
 }
+
 EOF
 ```
 
@@ -30,6 +31,8 @@ We can now start defining the resources of our infrastructure. The first resourc
 cat >> config.cf << EOF
 resource "docker_image" "nginx" {
   name = "nginx:1.11-alpine"
+}
+
 EOF
 ```
 
