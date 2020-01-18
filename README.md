@@ -182,3 +182,8 @@ To destroy all the resources created
 ```shell
 terraform destroy
 ```
+
+To delete all files created
+```
+rm -rf config.tf* terraform.tfstate* .terraform/
+```
