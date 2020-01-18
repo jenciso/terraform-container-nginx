@@ -1,5 +1,3 @@
-# Terraform LAB 101
-
 # Deploy NGINX container using Terraform
 
 ## Create Terraform Config
