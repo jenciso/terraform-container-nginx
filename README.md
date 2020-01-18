@@ -117,7 +117,7 @@ As our infrastructure grows and changes, terraform will manage and ensure we alw
 
 We can change our container to launch two instances, each with different names.
 
-```shell
+```ruby
 resource "docker_container" "nginx-server" {
   count = 2
   name = "nginx-server-${count.index+1}"
@@ -141,7 +141,7 @@ terraform validate
 terraform plan -out config.tfplan
 ```
 
-The plan will outline the changes. Because we're changing the name and adding a resource we'll see `Plan: 1 to add, 1 to change, 0 to destroy.`
+The plan will outline the changes. Because we're changing the name and adding a resource we'll see `Plan: 1 to add, 0 to change, 0 to destroy.`
 
 In the details it will explain that changing a container name forces the resource to be recreated name: "nginx-server" => "nginx-server-1" (forces new resource) along with adding the new container _dockercontainer.nginx-server.1_
 
@@ -151,3 +151,34 @@ We can then apply the plan as we did in the previous step.
 terraform apply -auto-approve
 ```
 
+Now, scale your nginx-server to 8 replicas:
+
+```ruby
+resource "docker_container" "nginx-server" {
+  count = 8
+  name = "nginx-server-${count.index+1}"
+  image = docker_image.nginx.latest
+  ports {
+    internal = 80
+    external = "808${count.index+1}"
+  }
+  volumes {
+    container_path  = "/usr/share/nginx/html"
+    host_path = "/tmp/tutorial/www"
+    read_only = true
+  }
+}
+```
+
+```shell
+terraform plan
+terraform apply -auto-approve
+```
+
+## Clean UP
+
+To destroy all the resources created
+
+```shell
+terraform destroy
+```
