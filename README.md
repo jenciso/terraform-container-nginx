@@ -10,18 +10,13 @@ A provider is an abstract way of handling the underlying infrastructure and resp
 
 A resource are components of your infrastructure, for example a container or image.
 
-We will use a `config.tf` file to setup out environment. First of all, we need to install a run this command:
-
-```shell
-terraform init
-```
+We will use a `config.tf` file to setup our lab environment.
 
 ```shell
 cat > config.tf << EOF
 provider "docker" {
   host = "unix:///var/run/docker.sock"
 }
-
 EOF
 ```
 
@@ -32,7 +27,6 @@ cat >> config.tf << EOF
 resource "docker_image" "nginx" {
   name = "nginx:1.11-alpine"
 }
-
 EOF
 ```
 
@@ -59,6 +53,12 @@ EOF
 ## Plan Terraform Actions
 
 Once the configuration has been defined we need to create an execution plan. Terraform describes the actions required to achieve the desired state. The plan can be saved using -out. We'll apply the execution plan in the next step.
+
+First at all:
+
+```shell
+terraform init
+```
 
 To create a plan, use the CLI
 
