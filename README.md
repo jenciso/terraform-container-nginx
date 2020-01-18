@@ -186,4 +186,5 @@ terraform destroy
 To delete all files created
 ```
 rm -rf config.tf* terraform.tfstate* .terraform/
+rm -rf /tmp/tutorial
 ```
