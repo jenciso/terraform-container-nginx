@@ -96,6 +96,7 @@ You can use the Docker CLI to view the changes and see the newly launched contai
 
 ```shell
 docker ps
+docker ps -f name=nginx-server-1 --format "table {{.Names}}\t{{.Status}}"
 ```
 
 you can inspect this in future using the terraform CLI
@@ -192,3 +193,9 @@ rm -rf /tmp/tutorial
 ### DEMO
 
 [![asciicast](https://asciinema.org/a/bF5OfbZwLZ043XvJ0au3ATPPV.svg)](https://asciinema.org/a/bF5OfbZwLZ043XvJ0au3ATPPV)
+
+## References
+
+https://www.terraform.io/docs/providers/docker/index.html
+https://gist.github.com/brianshumate/09adf967c563731ca1b0c4d39f7bcdc2
+
