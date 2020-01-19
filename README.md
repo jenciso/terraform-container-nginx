@@ -60,7 +60,7 @@ First at all:
 terraform init
 ```
 
-![Example](docs/init01.svg)
+![Example](docs/init-01.svg)
 
 Now, to create a plan, use the CLI
 
