@@ -192,9 +192,7 @@ rm -rf /tmp/tutorial
 
 ### DEMO
 
-![Example](./docs/lab01.svg)
-
-https://asciinema.org/a/bF5OfbZwLZ043XvJ0au3ATPPV
+[![asciicast](https://asciinema.org/a/bF5OfbZwLZ043XvJ0au3ATPPV.svg)](https://asciinema.org/a/bF5OfbZwLZ043XvJ0au3ATPPV)
 
 ## References
 
