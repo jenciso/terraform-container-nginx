@@ -192,9 +192,9 @@ rm -rf /tmp/tutorial
 
 ### DEMO
 
-![](/docs/terraform-lab01.svg)
+![](docs/lab01.svg)
 
-https://asciinema.org/a/bF5OfbZwLZ043XvJ0au3ATPPV.svg
+https://asciinema.org/a/bF5OfbZwLZ043XvJ0au3ATPPV
 
 ## References
 
