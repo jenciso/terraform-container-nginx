@@ -60,7 +60,9 @@ First at all:
 terraform init
 ```
 
-To create a plan, use the CLI
+![Example](docs/init01.svg)
+
+Now, to create a plan, use the CLI
 
 ```shell
 terraform plan -out config.tfplan
